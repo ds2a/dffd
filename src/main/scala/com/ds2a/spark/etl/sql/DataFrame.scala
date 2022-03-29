@@ -14,6 +14,7 @@ object DataFrame {
     df.printSchema()
     df.show(false)
 
+    df.write.csv("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\output\\members.csv")
   }
 
 }
