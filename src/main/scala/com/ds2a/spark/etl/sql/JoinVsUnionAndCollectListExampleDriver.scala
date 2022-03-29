@@ -1,11 +1,16 @@
 package com.ds2a.spark.etl.sql
 
+import org.apache.spark.sql.{Column, SparkSession}
+import org.apache.spark.sql.functions._
+
 object JoinVsUnionAndCollectListExampleDriver {
+
+  def collect_list(str: String): Column = ???
 
   def main(args: Array[String]): Unit = {
 
     val spark = SparkSession.builder().master("local[*]").getOrCreate()
-
+    import spark.implicits._
     spark.sparkContext.setLogLevel("ERROR")
 
     val data1 = Seq((1, "A"), (2, "B"), (3, "C"))

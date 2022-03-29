@@ -1,5 +1,7 @@
 package com.ds2a.spark.etl.sql
 
+import org.apache.spark.sql.SparkSession
+
 object ReadJsonDriver {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().master("local").appName("json").getOrCreate()

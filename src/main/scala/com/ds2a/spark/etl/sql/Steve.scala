@@ -1,11 +1,18 @@
 package com.ds2a.spark.etl.sql
 
+import org.apache.spark.SparkConf
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.expressions.Window
+import org.apache.spark.sql.functions.{count, lit}
+
 object Steve {
 
   def main(args: Array[String]): Unit = {
 
     val conf = new SparkConf().setAppName("CDR").setMaster("local[2]")
     val spark = SparkSession.builder().config(conf).getOrCreate()
+
+    import spark.implicits._
 
     val labels = spark.read.option("header", "true").csv("C:\\Users\\anred\\Desktop\\fl\\roy-australia\\Assignment_Files\\Task_1\\spark-training-etl\\input\\tfm.csv")
     //labels.show()

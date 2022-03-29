@@ -1,5 +1,7 @@
 package com.ds2a.spark.etl.sql
 
+import org.apache.spark.sql.SparkSession
+
 object sparksessiontest2 {
 
   def main(args: Array[String]): Unit = {

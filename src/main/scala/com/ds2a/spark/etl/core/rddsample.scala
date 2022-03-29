@@ -1,5 +1,7 @@
 package com.ds2a.spark.etl.core
 
+import org.apache.spark.sql.SparkSession
+
 object rddsample {
   def main(args: Array[String]): Unit = {
 
