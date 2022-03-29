@@ -1,19 +1,14 @@
-package com.ds2a.spark.etl.sql
+package com.ds2a.spark.etl.sql.json
 
 import org.apache.spark.sql.SparkSession
 
-
-object DataFrame {
+object DFJson {
   def main(args: Array[String]): Unit = {
     val spark : SparkSession = SparkSession.builder().master("local[1]")
       .appName("sparkByExamples.com")
       .getOrCreate()
-
-    val df = spark.read.options(Map("inferSchema" -> "true", "delimiter" -> ",", "header" -> "true"))
-    .csv("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\input\\members.csv")
+    val df = spark.read.option("multiline","true").json("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\input\\JsonData.json")
     df.printSchema()
     df.show(false)
-
   }
-
 }
