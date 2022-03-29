@@ -9,7 +9,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="scala-sdk-2.12.12" level="application" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-core_2.11:2.4.4" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro-mapred:hadoop2:1.8.2" level="project" />
@@ -151,6 +150,7 @@
     <orderEntry type="library" name="Maven: org.apache.arrow:arrow-vector:0.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:arrow-format:0.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.arrow:arrow-memory:0.10.0" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
     <orderEntry type="library" name="Maven: com.carrotsearch:hppc:0.7.2" level="project" />
     <orderEntry type="library" name="Maven: com.vlkan:flatbuffers:1.2.0-3f79e055" level="project" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming_2.11:2.4.4" level="project" />
@@ -160,8 +160,6 @@
     <orderEntry type="library" name="Maven: org.mongodb.spark:mongo-spark-connector_2.11:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming-kafka-0-10_2.11:2.4.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: ch.qos.logback:logback-classic:1.2.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro:1.8.2" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" level="project" />
@@ -169,13 +167,6 @@
     <orderEntry type="library" name="Maven: org.tukaani:xz:1.5" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.11" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.databricks:spark-avro_2.11:4.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.databricks:spark-xml_2.11:0.4.1" level="project" />
-    <orderEntry type="library" name="Maven: com.typesafe:config:1.3.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.bahir:spark-streaming-twitter_2.11:2.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.twitter4j:twitter4j-stream:4.0.4" level="project" />
-    <orderEntry type="library" name="Maven: org.twitter4j:twitter4j-core:4.0.4" level="project" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.10.5" level="project" />
-    <orderEntry type="library" name="Maven: co.elastic.apm:elastic-apm-agent:1.20.0" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.11.0" level="application" />
   </component>
 </module>
