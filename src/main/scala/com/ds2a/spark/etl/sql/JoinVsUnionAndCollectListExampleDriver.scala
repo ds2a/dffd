@@ -1,14 +1,10 @@
-package com.persistent.spark
-
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
+package com.ds2a.spark.etl.sql
 
 object JoinVsUnionAndCollectListExampleDriver {
 
   def main(args: Array[String]): Unit = {
 
     val spark = SparkSession.builder().master("local[*]").getOrCreate()
-    import spark.implicits._
 
     spark.sparkContext.setLogLevel("ERROR")
 

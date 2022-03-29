@@ -1,6 +1,4 @@
-package org.example
-
-import org.apache.spark.sql.SparkSession
+package com.ds2a.spark.etl.sql
 
 object sparksessiontest2 {
 
@@ -8,12 +6,12 @@ object sparksessiontest2 {
 
 
     val spark = SparkSession.builder()
-//      .master("local[1]")
+      //      .master("local[1]")
       .appName("SparkByExample")
       .getOrCreate()
 
     val x = spark.sparkContext.parallelize(Array("b", "a", "c"))
-    val y = x.map(z => (z,1))
+    val y = x.map(z => (z, 1))
     println(x.collect().mkString(", "))
     println(y.collect().mkString(", "))
 

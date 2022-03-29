@@ -1,9 +1,4 @@
-package org.example
-
-import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.expressions.Window
-import org.apache.spark.sql.functions.{count, lit}
+package com.ds2a.spark.etl.sql
 
 object Steve {
 
@@ -12,9 +7,7 @@ object Steve {
     val conf = new SparkConf().setAppName("CDR").setMaster("local[2]")
     val spark = SparkSession.builder().config(conf).getOrCreate()
 
-    import spark.implicits._
-
-    val labels = spark.read.option("header","true").csv("C:\\Users\\anred\\Desktop\\fl\\roy-australia\\Assignment_Files\\Task_1\\spark-training-etl\\input\\tfm.csv")
+    val labels = spark.read.option("header", "true").csv("C:\\Users\\anred\\Desktop\\fl\\roy-australia\\Assignment_Files\\Task_1\\spark-training-etl\\input\\tfm.csv")
     //labels.show()
     labels.printSchema()
 
@@ -27,10 +20,10 @@ object Steve {
       .withColumn("current_cluster_size", count("vinoai_index").over(byLabelingSetAndLabel))
       .where($"current_cluster_size" > lit(1) || $"original_cluster_size" === lit(1))
 
-   // cleanedLabels.show()
+    // cleanedLabels.show()
     cleanedLabels.printSchema()
 
-    cleanedLabels.coalesce(1).write.option("header","true").csv("C:\\Users\\anred\\Desktop\\fl\\roy-australia\\Assignment_Files\\Task_1\\spark-training-etl\\output1\\")
+    cleanedLabels.coalesce(1).write.option("header", "true").csv("C:\\Users\\anred\\Desktop\\fl\\roy-australia\\Assignment_Files\\Task_1\\spark-training-etl\\output1\\")
 
 
   }

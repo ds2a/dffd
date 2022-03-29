@@ -1,7 +1,4 @@
-package com.persistent.spark
-
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions._
+package com.ds2a.spark.etl.sql
 
 object GreatestAndLatestDriver {
   def main(args: Array[String]): Unit = {
@@ -11,7 +8,6 @@ object GreatestAndLatestDriver {
       ("Venu", 35, 13, 32, 56, 76),
       ("Swetcha", 67, 34, 56, 80, 65))
    val list_schema = Seq("Name", "term-1", "term-2", "term-3", "term-4", "term-5")
-    import spark.implicits._
     val df_list = list_emp.toDF("Name", "term-1", "term-2", "term-3", "term-4", "term-5")
    //val df_list=spark.createDataFrame(list_emp,list_schema )
     df_list.show()

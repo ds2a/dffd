@@ -1,4 +1,4 @@
-package com.persistent.spark
+package com.ds2a.spark.etl.scala
 
 object Factorial {
 

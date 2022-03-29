@@ -1,7 +1,4 @@
-package Demo_dir
-
-import com.databricks.spark.xml.XmlDataFrameReader
-import org.apache.spark.sql.SparkSession
+package com.ds2a.spark.etl.sql
 
 object ReadXMLDriver {
   def main(args: Array[String]): Unit = {
@@ -15,8 +12,8 @@ object ReadXMLDriver {
       .load("C:\\Users\\gsuresh\\Downloads\\spark-scala-examples-master\\Input\\dataset.xml")
 
     //df.show(numRows = 100,true)
-    df.write.format("csv").option("header",true)
-    .option("mapreduce.fileoutputcommitter.algorithm.version", "2")
+    df.write.format("csv").option("header", true)
+      .option("mapreduce.fileoutputcommitter.algorithm.version", "2")
       .mode("overwrite")
       .save("C:\\Users\\gsuresh\\Downloads\\spark-scala-examples-master\\Output\\")
     //    import spark.implicits._

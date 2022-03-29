@@ -1,6 +1,4 @@
-package org.example
-
-import org.apache.spark.sql.SparkSession
+package com.ds2a.spark.etl.sql
 
 object SparkSessionTest {
 
@@ -24,5 +22,3 @@ object SparkSessionTest {
 
   }
 }
-
-
