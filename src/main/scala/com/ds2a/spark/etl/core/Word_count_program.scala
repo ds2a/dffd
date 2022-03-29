@@ -1,4 +1,5 @@
-package WordCount
+package com.ds2a.spark.etl.core
+
 
 import org.apache.spark.sql.SparkSession
 
@@ -8,6 +9,8 @@ object word_count {
     val spark = SparkSession.builder().master("local").appName("word").getOrCreate()
 
     val textFile = spark.sparkContext.textFile("C:\\Users\\gsuresh\\Downloads\\sample.txt")
-    val counts = textFile.flatMap(line=> line.split(" ")).map(word => (word,1)).reduceByKey(_+_)
+    val counts = textFile.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
     counts.foreach(println)
   }
+
+}
