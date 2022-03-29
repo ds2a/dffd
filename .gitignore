@@ -1,3 +1,5 @@
 /.idea/
 /.idea/*
 /dependency-reduced-pom.xml
+/target/
+/spark-etl.iml
