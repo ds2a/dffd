@@ -10,5 +10,7 @@ object DFJson {
     val df = spark.read.option("multiline","true").json("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\input\\JsonData.json")
     df.printSchema()
     df.show(false)
+
+    df.write.json("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\output\\JsonData.json")
   }
 }
