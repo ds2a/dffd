@@ -20,8 +20,8 @@ object RDDbroadcast {
     val rdd2 = rdd.map(f => {
       val country = f._3
       val state = f._4
-      val fullCountry =  broadcastCountries.value.get(country).get
-      val fullState = broadcastStates.value.get(state).get
+      val fullCountry =  broadcastCountries.value(country)
+      val fullState = broadcastStates.value(state)
       (f._1,f._2,fullCountry,fullState)
     })
     println(rdd2.collect().mkString("\n"))
