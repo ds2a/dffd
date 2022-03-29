@@ -7,14 +7,15 @@ object WordCountprogram {
 
     val spark = SparkSession.builder().master("local[1]").appName("WordCountExample").getOrCreate()
 
-    val inputRdd = spark.sparkContext.textFile("C:\\Users\\hp\\Desktop\\text1.txt")
+    val inputRdd = spark.sparkContext.textFile("C:\\Users\\akivi\\OneDrive\\Desktop\\interview\\SQL.txt")
 
 
-    val inputSplitRdd = inputRdd.map(line => line.split(" ")).map(word => (word, 1))
+    val inputSplitRdd = inputRdd.flatMap(line => line.split(" ")).map(word => (word, 1))
 
-    val inputSplitRdd1 = inputSplitRdd.reduceByKey((a, b) => a + b)
+    val inputSplitRdd1 = inputSplitRdd.reduceByKey(_+_)
 
     inputSplitRdd1.foreach(println)
+    println("word count: "+inputSplitRdd1.count())
     //inputSplitRdd.foreach(println)
 
   }
