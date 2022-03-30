@@ -13,12 +13,12 @@ object DataFrameParquet {
     df.show {
       false
     }
-    df.write.partitionBy("gender","country").parquet("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\output\\parquet")
+
     df.createOrReplaceTempView("ParquetTable")
     val parkSQl = spark.sql("select * from ParquetTable where (gender = 'Male')and(country ='Russia')")
     parkSQl.show()
     parkSQl.printSchema()
-
+    df.write.partitionBy("gender","country").parquet("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\output\\parquet")
 
   }
 }
