@@ -19,8 +19,7 @@ object PivotTable {
     val pivotDf1 = df.groupBy("products").pivot("country").sum("Amount")
     pivotDf1.show()
 
-    val pivotDf2 = df.groupBy("products").pivot("country").sum("Amount")
-    pivotDf2.show()
+
 
     val pivotDf3 = df.groupBy("products","country")
       .sum("Amount")
