@@ -1,0 +1,3 @@
+python,10000
+java,2000
+scala,3000

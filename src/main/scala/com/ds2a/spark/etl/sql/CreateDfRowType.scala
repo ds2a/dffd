@@ -8,8 +8,10 @@ object CreateDfRowType {
     val spark : SparkSession = SparkSession.builder().master("local[1]")
       .appName("sparkByExamples.com")
       .getOrCreate()
-    val schema = StructType(Array(StructField("language",StringType,nullable = true)
-    ,StructField("user-account",StringType,nullable = true)))
+    val schema = StructType(Array(
+      StructField("language",StringType,nullable = true) ,StructField("user-account",StringType,nullable = true)))
+
+
     val data = Seq(("java","2000"),("python","10000"),("scala","3000"))
     val rdd = spark.sparkContext.parallelize(data)
     val rowRdd = rdd.map(f => Row(f._1,f._2))

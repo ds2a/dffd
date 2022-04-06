@@ -14,11 +14,14 @@ object CreateDf {
     import spark.implicits._
     val dfFromRdd = rdd.toDF()
     dfFromRdd.printSchema()
+    dfFromRdd.show()
 
     val dfFromRdd2 = rdd.toDF("language","users_count")
     dfFromRdd2.printSchema()
+    dfFromRdd2.show()
 
     val dfFromRdd3 = spark.createDataFrame(rdd).toDF(columns:_*)
     dfFromRdd3.printSchema()
+    dfFromRdd3.show()
   }
 }
