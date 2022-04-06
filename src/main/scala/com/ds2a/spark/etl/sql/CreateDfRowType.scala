@@ -15,6 +15,7 @@ object CreateDfRowType {
     val rowRdd = rdd.map(f => Row(f._1,f._2))
     val dfFromRdd =spark.createDataFrame(rowRdd,schema)
     dfFromRdd.show()
+    dfFromRdd.printSchema()
   }
 
 }
