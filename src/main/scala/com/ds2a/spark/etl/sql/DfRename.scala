@@ -33,9 +33,6 @@ object DfRename {
     .withColumnRenamed("lastname","lname")
       .drop("name")
       .printSchema()
-
-
-
   }
 
 }
