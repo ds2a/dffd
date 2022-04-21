@@ -1,7 +1,8 @@
 package com.ds2a.spark.etl.sql
 
 import org.apache.spark.sql.Row.empty.schema
-import org.apache.spark.sql.functions.{col, to_date, to_timestamp}
+import org.apache.spark.sql.catalyst.expressions.codegen.CodeFormatter.format
+import org.apache.spark.sql.functions.{col, format_string, to_date, to_timestamp}
 import org.apache.spark.sql.types.{DateType, IntegerType, StringType, StructField, StructType, TimestampType}
 import org.apache.spark.sql.{Row, SparkSession}
 
@@ -36,7 +37,8 @@ object createAnilDf {
     df.printSchema()
     val df3 = df1.withColumn("dob",col("dob").cast(TimestampType))
     df3.show()
-    val df2 = df1.withColumn("dob1", to_timestamp(col("dob"))).withColumn("dob2", to_date(col("dob")))
+    val df2 = df1.withColumn("dob1", to_timestamp(col("dob")))
+                .withColumn("dob2", to_date(col("dob")))
     df2.printSchema()
     df2.show()
     /*Using Rdd's
