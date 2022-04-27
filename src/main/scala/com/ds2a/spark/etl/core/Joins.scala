@@ -7,6 +7,7 @@ object Joins {
     val spark : SparkSession = SparkSession.builder().master("local[1]")
       .appName("sparkByExamples.com")
       .getOrCreate()
+    spark.sparkContext.setLogLevel("ERROR")
 
     val emp = Seq((1,"Smith",-1,"2018","10","M",3000),
       (2,"Rose",1,"2010","20","M",4000),

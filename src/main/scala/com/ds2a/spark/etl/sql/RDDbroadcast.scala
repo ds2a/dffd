@@ -7,6 +7,7 @@ object RDDbroadcast {
     val spark : SparkSession = SparkSession.builder().master("local[1]")
       .appName("sparkByExamples.com")
       .getOrCreate()
+    spark.sparkContext.setLogLevel("ERROR")
     val states = Map(("NY","New York"),("CA","California"),("FL","Florida"))
     val countries = Map(("USA","United States of America"),("IN","India"))
 
@@ -24,6 +25,7 @@ object RDDbroadcast {
       val fullState = broadcastStates.value(state)
       (f._1,f._2,fullCountry,fullState)
     })
+    println(rdd2.collect().foreach(println))
     println(rdd2.collect().mkString("\n"))
   }
 

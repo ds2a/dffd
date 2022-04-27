@@ -31,6 +31,7 @@ object createAnilDf {
     import spark.implicits._
 
     val df = spark.createDataFrame(data, schema)
+    df.show()
 
     val df1 = spark.createDataFrame(data1).toDF(columns: _*)
     df.show()
