@@ -42,6 +42,8 @@ object createAnilDf {
                 .withColumn("dob2", to_date(col("dob")))
     df2.printSchema()
     df2.show()
+
+    df3.printSchema()
     /*Using Rdd's
      */
   }
