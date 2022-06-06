@@ -1,0 +1,6 @@
+{"datetime":"2015-12-13 00:03:37.745","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"GET","url":"/login"}
+{"datetime":"2015-12-13 00:03:38.145","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"GET","url":"/electroncis/home-appliance/LG-TV"}
+{"datetime":"2015-12-13 00:03:39.715","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"PUT","url":"/electroncis/home-appliance/LG-TV"}
+{"datetime":"2015-12-13 00:03:41.145","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"GET","url":"/electroncis/office-usage/Panasonic-Projector"}
+{"datetime":"2015-12-13 00:03:47.725","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"POST","url":"/electroncis/home-appliance/LG-TV"}
+{"datetime":"2015-12-13 00:03:50.347","userid":"492","country":"canada","sessionid":"dbfa3e2f6a274e3285fc99a7610edcad","http_method":"GET","url":"/logout"}
