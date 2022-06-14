@@ -20,6 +20,17 @@ object KcsTask1 {
     studentsDf.printSchema()
     studentsDf.show(false)
 
+    val CourseNotSubscribedDf = hecoursesDf.join(studentsDf,hecoursesDf("CourseId") === studentsDf("Courseid"),"leftAnti")
+    CourseNotSubscribedDf.write.mode("overwrite").json("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\KcsTask1Target\\notsubscribed.json")
+    CourseNotSubscribedDf.show(false)
+
+    val CoursesSubscribedDf =  hecoursesDf.join(studentsDf,hecoursesDf("CourseId") === studentsDf("Courseid"),"inner")
+    CoursesSubscribedDf.show(false)
+
+    CoursesSubscribedDf.createTempView("CoursesSubscribedTable")
+    val TotalFeeCollectedWrtCategoryDf = spark.sql("""select Category,sum(CourseFee) as TotalFeeCollected from CoursesSubscribedTable group by Category """).coalesce(1)
+    TotalFeeCollectedWrtCategoryDf.show(false)
+    TotalFeeCollectedWrtCategoryDf.write.mode("overwrite").json("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\target\\KcsTask1Target\\TotalFee.json")
   }
 
 }

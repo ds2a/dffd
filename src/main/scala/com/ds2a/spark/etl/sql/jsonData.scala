@@ -12,7 +12,7 @@ object jsonData {
     spark.sparkContext.setLogLevel("error")
     val EcommerceDataDf = spark.read.option("header",value = false).option("delimiter","|").csv("C:\\Users\\akivi\\IdeaProjects\\spark-etl\\input\\jsondata.txt")
     val EcommerceDataDf1 = EcommerceDataDf.toDF("value")
-    //EcommerceDataDf1.show(false)
+    EcommerceDataDf1.show(false)
     val schema = new StructType(Array(StructField("datetime",StringType, nullable = true)
       ,StructField("userid",StringType, nullable = true)
       ,StructField("country", StringType, nullable = true)
@@ -21,11 +21,11 @@ object jsonData {
       ,StructField("url", StringType, nullable = true)))
 
     val EcommerceListDataDf = EcommerceDataDf1.withColumn("value",from_json(col("value"),schema))
-    //EcommerceListDataDf.show(false)
+    EcommerceListDataDf.show(false)
     val EcommerceAllDataDf = EcommerceListDataDf.select(col("value.*"))
-    //EcommerceAllDataDf.show(false)
+    EcommerceAllDataDf.show(false)
     val EcommerceDataDayLevelDf = EcommerceAllDataDf.withColumn("date",EcommerceAllDataDf("datetime").cast(DateType))
-    //EcommerceDataDayLevelDf.show(false)
+    EcommerceDataDayLevelDf.show(false)
 
 import spark.implicits._
     val distinctDf = EcommerceAllDataDf.distinct()
