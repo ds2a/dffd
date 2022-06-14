@@ -1,0 +1,50 @@
+[
+  {
+    "CourseId": 1001,
+    "CourseFee": 7000,
+    "Subscription": "Annual",
+    "CourseName": "Hadoop Professional Training",
+    "Category": "BigData",
+    "Website": "HadoopExam.com"
+  },
+  {
+    "CourseId": 1002,
+    "CourseFee": 7500,
+    "Subscription": "Annual",
+    "CourseName": "Spark Professional Training",
+    "Category": "BigData",
+    "Website": "HadoopExam.com"
+  },
+  {
+    "CourseId": 1003,
+    "CourseFee": 7000,
+    "Subscription": "Annual",
+    "CourseName": "PySpark Professional Training",
+    "Category": "BigData",
+    "Website": "HadoopExam.com"
+  },
+  {
+    "CourseId": 1004,
+    "CourseFee": 7000,
+    "Subscription": "Annual",
+    "CourseName": "Apache Hive Professional Training",
+    "Category": "Analytics",
+    "Website": "HadoopExam.com"
+  },
+  {
+    "CourseId": 1005,
+    "CourseFee": 10000,
+    "Subscription": "Annual",
+    "CourseName": "Machine Learning Professional Training",
+    "Category": "Data Science",
+    "Website": "HadoopExam.com"
+  },
+  {
+    "CourseId": 1006,
+    "CourseFee": 7000,
+    "Subscription": "Annual",
+    "CourseName": "SAS Base",
+    "Category": "Analytics",
+    "Website": "HadoopExam.com"
+  }
+]
