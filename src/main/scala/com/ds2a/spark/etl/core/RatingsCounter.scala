@@ -10,6 +10,9 @@ object RatingsCounter {
     val results = ratings.countByValue()
     val sortedResults = results.toSeq.sortBy(_._1)
     sortedResults.foreach(println)
-  }
+
+     }
+
+
 
 }

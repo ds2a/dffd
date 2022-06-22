@@ -11,7 +11,8 @@ object friendsByAgeRdd {
       val noOfFriends = fields(3).toInt
       (age,noOfFriends)
     }
-    val lines = spark.sparkContext.textFile("C:\\SparkScalaCourse\\data\\fakefriends-noheader.csv")
+    val sc = spark.sparkContext
+    val lines = sc.textFile("C:\\SparkScalaCourse\\data\\fakefriends-noheader.csv")
     val rdd = lines.map(parseLine)
     val totalsByAge = rdd.mapValues(x=>(x,1)).reduceByKey((x,y)=> (x._1+y._1,x._2+y._2))
     val averagesByAge = totalsByAge.mapValues(x=>x._1/x._2)
