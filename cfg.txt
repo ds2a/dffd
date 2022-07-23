@@ -1,0 +1,56 @@
+Table Employee has 3 columns(EmpID, OfficeMobile, HomeMobile). 
+
+Some Employees have given same number for both places. write a code where output
+should be 2 columns only EmpID and Contact No. If numer is same, put in 1 row else in 2 rows.
+Sample : 
+
+EmpID, OfficeMobile,HomeMobile
+1,123,123
+2,456,789
+
+desired output :
+1,123
+2,456
+2,789
+
+
+val officeMobiledf = df.select("EmpID", "OfficeMobile".as("phone"))
+val homeMobiledf = df.select("EmpID", "HomeMobile".as("phone"))
+
+val resultdf = officeMobiledf.union(homeMobiledf)   // union removes duplicates
+
+resultdf.show()
+
+========================================================
+========================================================
+write spark code to calculate the emp whose salary is greater then the avg salary with respect to each department?
+Sample Input : 
+EmpID  Name  Salary  Department
+1      abc   4000     BANG
+2      MNL   5000     BANG
+3      XYZ   5500     JAI
+4      PQR   7000     IAQ
+
+
+val spark = SparkSession.builder.appName("").master("local").getOrCreate()
+
+val df = spark.read.
+
+val avgsaldf = df.withColumn("avg_sal_per_dept", avg("salary").over(Winow.partitionBy("department"))).filter("salary" > "avg_sal_per_dept")
+
+avgsaldf.show()
+
+
+========================================================
+========================================================
+
+50 columns in df
+
+rename to what columns name 
+
+we can take a map 
+current column name vs new columns
+
+val map = Map()
+
+df.columns().map(columnname -> df.withRenameColumn(columnname , newcolumname))
